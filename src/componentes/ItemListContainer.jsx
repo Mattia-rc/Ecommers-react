@@ -1,12 +1,12 @@
-import React from 'react'
+  
+const ItemListContainer = ({ greeting }) => {
+  return(
 
-export default function ItemListContainer() {
-    
-  return (
-    <ul>
-        <li>HOME</li>
-        <li>PRODUCTOS</li>
-        <li>CONTACTO</li>
-    </ul>
+    <div>
+      <h2 className="texth2">{greeting}</h2>
+    </div>
+
   )
 }
+
+export default ItemListContainer;

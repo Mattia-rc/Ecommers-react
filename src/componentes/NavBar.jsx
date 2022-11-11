@@ -4,8 +4,14 @@ import CartWidget from './CartWidget'
 export default function NavBar() {
   return (
     <nav>
-        <CartWidget/>
-        <h1>Es una nav</h1>
+        
+        <ul className='navFlex'>
+     
+          <li>Home</li>
+          <li>Productos</li>
+          <li>Contacto</li>
+          <CartWidget/>
+        </ul>
     </nav>
   )
 }

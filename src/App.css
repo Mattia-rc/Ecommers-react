@@ -21,6 +21,20 @@ svg{
   height: 40px;
 }
 
-ul{
+
+li{
+  list-style: none;
+}
+
+.navFlex{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.texth2{
   padding-top: 100px;
 }
