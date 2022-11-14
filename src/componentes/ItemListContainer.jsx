@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 const Productos = [
 
   { id: 1, nombre: "Teclado", stock: 4, img: "https://http2.mlstatic.com/D_NQ_NP_649496-MLA51811501299_102022-O.jpg" },
@@ -11,14 +11,14 @@ const Productos = [
 const ItemListContainer = ({ greeting }) => {
 
   const [products, setProducts] = useState([]);
-
+  const [clicks, setClicks] = useState(0)
   const productList = new Promise((resolve) => setTimeout(() => {
     resolve(Productos);
   }, 3000))
 
   productList.then((data) => setProducts((data)))
 
-  function Pantalla(){
+  function pantalla() {
     
   }
   return (
@@ -30,22 +30,29 @@ const ItemListContainer = ({ greeting }) => {
 
       <div className="flex_productos">{products.map((product) =>
 
-      
-      <div className="img_edit"><img src={product.img}/>
-      
-      <h3>{product.nombre}</h3>
-      <p>el stock disponibles es de: {product.stock}</p>
 
-      <button onClick={Pantalla()}>Agregar Productos</button>
-      
-      </div>
-        
-    
-      
+        <div className="img_edit"><img src={product.img} />
+
+          <h3>{product.nombre}</h3>
+          <p>el stock disponibles es de: {product.stock}</p>
+
+          <button className="botonClass" onClick={()=>{
+
+            console.log(product);
+            setClicks(clicks + 1) 
+            
+          }}>Agregar Productos</button>
+
+          <p>{clicks}</p>
+          
+        </div>
+
+          
+
 
       )}</div>
     </div>
-    
+
   )
 }
 

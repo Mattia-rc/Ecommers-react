@@ -8,7 +8,7 @@ function App() {
    <main className='App'>
 
     <NavBar/>
-    <ItemListContainer greeting= "Mi primera pagina "/>
+    <ItemListContainer greeting= "Mis productos"/>
    </main>
 
     
