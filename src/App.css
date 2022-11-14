@@ -39,3 +39,26 @@ li{
   padding-top: 100px;
   color: blue;
 }
+
+
+.flex_productos{
+
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+
+}
+
+.img_edit{
+  border: 1px solid black;
+  padding: 70px 20px;
+  background: #fff;
+  border-radius: 15px;
+}
+
+
+
+.img_edit img{
+  width: 250px;
+  height: 150px;
+}
