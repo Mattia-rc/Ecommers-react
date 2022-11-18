@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-
+import { useParams } from "react-router-dom";
 import { item } from "../mocks/item.mock"
 
 const ItemListContainer = ({ greeting }) => {
+  const { category } = useParams();
   const [products, setProducts] = useState([]);
   const [clicks, setClicks] = useState(0)
   useEffect(() => {
