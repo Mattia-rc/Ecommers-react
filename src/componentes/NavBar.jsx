@@ -10,7 +10,7 @@ export default function NavBar() {
           <li>Home</li>
           <li>Productos</li>
           <li>Contacto</li>
-          <CartWidget/>
+          <CartWidget />
         </ul>
     </nav>
   )

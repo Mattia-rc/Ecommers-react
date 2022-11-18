@@ -17,16 +17,13 @@ const ItemListContainer = ({ greeting }) => {
   }, 3000))
 
   productList.then((data) => setProducts((data)))
-
-  function pantalla() {
-    
-  }
+ 
+ 
   return (
 
     <div>
       {<h2 className="texth2">{greeting}</h2>}
-      {/*      <ul>{products.map((product)=> <li>{product.nombre}</li>)}</ul> 
- */}
+     
 
       <div className="flex_productos">{products.map((product) =>
 
@@ -41,9 +38,17 @@ const ItemListContainer = ({ greeting }) => {
             console.log(product);
             setClicks(clicks + 1) 
             
-          }}>Agregar Productos</button>
+          }}>Agregar Producto</button>
 
-          <p>{clicks}</p>
+          <button className="botonClass" onClick={()=>{
+            
+              <div className="box_productos">
+                
+              </div>
+
+
+          }}>Ver mas Información</button>
+            
           
         </div>
 
