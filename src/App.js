@@ -2,6 +2,7 @@
 import './App.css';
 import NavBar from './componentes/NavBar';
 import ItemListContainer from './componentes/ItemListContainer';
+import ItemDetailContainer from './componentes/itemDetailContainer';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
 
     <NavBar/>
     <ItemListContainer greeting= "Mis productos"/>
+    <ItemDetailContainer/>
    </main>
 
     
