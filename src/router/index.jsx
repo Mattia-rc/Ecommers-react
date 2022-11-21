@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import App from "../App";
-import Category from "../views/category";
-import Item from "../views/item";
+import Category from '../views.jsx/category'
+import Item from '../views.jsx/item'
 
 export const router = createBrowserRouter([
   {

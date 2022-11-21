@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import ItemListContainer from "../components/ItemListContainer";
-import { Layout } from "../components/Layout";
+import ItemListContainer from "../componentes/ItemListContainer";
+import { Layout } from "../componentes/Layout";
 
 const CategoryView = () => {
   const { category } = useParams();

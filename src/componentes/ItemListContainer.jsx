@@ -7,10 +7,26 @@ const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);
   const [clicks, setClicks] = useState(0)
   useEffect(() => {
-    new Promise((resolve) => setTimeout(() => {
-      resolve(item);
-    }, 3000)).then((data) => setProducts((data)))
-  }, [])
+    new Promise((resolve) =>
+      setTimeout(() => {
+        resolve(item);
+      }, 2000)
+    ).then((data) => {
+      if (category) {
+        const categories = data.filter(
+          (product) => product.category === category
+        );
+        setProducts(categories);
+      } else {
+        setProducts(data);
+      }
+    });
+  }, [category]);
+
+  if (products.length === 0) {
+    return <p>Loading...</p>;
+  }
+
 
   return (
     <div>

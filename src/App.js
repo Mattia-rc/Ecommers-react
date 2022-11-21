@@ -7,7 +7,6 @@ import ItemDetailContainer from './componentes/itemDetailContainer';
 function App() {
   return (
    <main className='App'>
-
     <NavBar/>
     <ItemListContainer greeting= "Mis productos"/>
     <ItemDetailContainer/>

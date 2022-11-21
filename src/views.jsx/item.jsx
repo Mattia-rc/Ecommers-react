@@ -1,5 +1,6 @@
-import ItemDetailContainer from "../components/ItemDetailContainer";
-import { Layout } from "../components/Layout";
+
+import ItemDetailContainer from '../componentes/itemDetailContainer'
+import {Layout} from '../componentes/Layout'
 
 const ItemView = () => {
   return (

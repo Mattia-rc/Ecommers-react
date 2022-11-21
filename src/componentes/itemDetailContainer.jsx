@@ -8,7 +8,17 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     new Promise((resolve) => setTimeout(() => resolve(itemMock[0]), 2000)).then(
-      (data) => setItem(data)
+      (data) => {
+
+        if(item){
+          const items = data.find(
+            (product)=> product.item ===item
+          );
+          setItem(items)
+        }else {
+          setItem(data);
+        }
+      } 
     );
   }, []);
 
@@ -16,7 +26,6 @@ const ItemDetailContainer = () => {
     return <p>Loading...</p>;
   }
 
-  return <ItemDetail item={item} />;
 };
 
 export default ItemDetailContainer;
