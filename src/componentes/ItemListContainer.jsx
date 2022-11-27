@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { item } from "../mocks/item.mock"
-
+import { Link } from 'react-router-dom'
 const ItemListContainer = ({ greeting }) => {
   const { category } = useParams();
   const [products, setProducts] = useState([]);
@@ -35,26 +35,24 @@ const ItemListContainer = ({ greeting }) => {
       <div className="flex_productos">{products.map((product) =>
 
         <div className="img_edit"><img src={product.img} />
-
-          <h3>{product.nombre}</h3>
-          <p>el stock disponibles es de: {product.stock}</p>
-
-          <button className="botonClass" onClick={() => {
+  <hr />
+          <h3 className="productName">{product.name}</h3>
+    
+            <h4 className="productName">{product.description}</h4>
+      {/*     <button className="botonClass" onClick={() => {
             
             setClicks(clicks + 1)
 
-          }}>Agregar Producto</button>
+          }}>Agregar Producto</button> */}
 
-          <button className="botonClass" onClick={() => {
+         {/*  <button className="botonClass" onClick={() => {
 
-            <div className="box_productos">
+           
 
-            </div>
+          }}>Detalle del producto</button> */}
 
-
-          }}>Ver mas Información</button>
-
-
+          <Link to={`/item/${product.id}`}>Ver detalle de producto</Link>
+          
         </div>
 
 

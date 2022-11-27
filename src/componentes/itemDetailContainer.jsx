@@ -1,30 +1,56 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 
-import { item as itemMock } from "../mocks/item.mock";
+import { item, item as itemMock } from "../mocks/item.mock";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-  const [item, setItem] = useState(null);
+  const [desc, setDesc] = useState({});
+  const {id} = useParams();
 
   useEffect(() => {
-    new Promise((resolve) => setTimeout(() => resolve(itemMock[0]), 2000)).then(
+
+    new Promise((resolve) => setTimeout(() => resolve(itemMock[0]))).then(
       (data) => {
 
-        if(item){
-          const items = data.find(
-            (product)=> product.item ===item
+        if(desc){
+          const items = item.find(
+            (product)=> product.id === id
           );
-          setItem(items)
+          setDesc(items)
         }else {
-          setItem(data);
+          setDesc(data);
         }
       } 
     );
   }, []);
 
-  if (!item) {
+  
+
+/*   if (!item) {
     return <p>Loading...</p>;
-  }
+  } */
+
+
+  return(
+
+    <div className="imgLeft">
+        <img  src={desc?.img} />
+          <div>
+            <h3 className="editText"> {desc?.name} </h3>
+            <h4> {desc?. description} </h4>
+            <h2> {desc?.price} </h2>
+
+              <div className="flex_button">
+                <button>+</button>
+                <button>-</button>
+              </div>
+          </div>
+    </div>
+    
+        
+
+  )
 
 };
 

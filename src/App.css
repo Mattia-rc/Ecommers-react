@@ -80,3 +80,29 @@ li{
   position: absolute;
   
 }
+
+.productName{
+  text-align: left;
+}
+
+.imgLeft{
+  margin-left: 20%;
+  margin-top: 15%;
+  display: flex;
+  gap: 30%;
+ 
+}
+
+.imgLeft img{
+  width: 400px;
+}
+
+.editText{
+  font-size: 20px;
+  text-transform: uppercase;
+
+}
+.flex_button{
+  display: flex;
+  
+}
