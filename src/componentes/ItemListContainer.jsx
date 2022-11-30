@@ -24,8 +24,9 @@ const ItemListContainer = ({ greeting }) => {
   }, [category]);
 
   if (products.length === 0) {
-    return <p>Loading...</p>;
+    return <p>cargando....  </p>;
   }
+
 
 
   return (
@@ -35,29 +36,15 @@ const ItemListContainer = ({ greeting }) => {
       <div className="flex_productos">{products.map((product) =>
 
         <div className="img_edit"><img src={product.img} />
-  <hr />
+          <hr />
           <h3 className="productName">{product.name}</h3>
-    
-            <h4 className="productName">{product.description}</h4>
-      {/*     <button className="botonClass" onClick={() => {
-            
-            setClicks(clicks + 1)
 
-          }}>Agregar Producto</button> */}
+          <h4 className="productName">{product.description}</h4>
 
-         {/*  <button className="botonClass" onClick={() => {
 
-           
-
-          }}>Detalle del producto</button> */}
-
-          <Link to={`/item/${product.id}`}>Ver detalle de producto</Link>
+          <Link className="editTextLink" to={`/item/${product.id}`}>Ver detalle de producto</Link>
           
         </div>
-
-
-
-
       )}</div>
     </div>
 

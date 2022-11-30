@@ -11,10 +11,16 @@ export const router = createBrowserRouter([
   },
   {
     path: "/category/:category",
-    element: <Category />,
+    element: <Category  />,
   },
   {
     path: "/item/:id",
     element: <Item />,
   },
+
+  {
+    path: "/carrito/",
+    element: <carrito/>
+
+  }
 ]);

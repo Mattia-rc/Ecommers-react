@@ -27,30 +27,11 @@ const ItemDetailContainer = () => {
 
   
 
-/*   if (!item) {
-    return <p>Loading...</p>;
-  } */
 
 
-  return(
 
-    <div className="imgLeft">
-        <img  src={desc?.img} />
-          <div>
-            <h3 className="editText"> {desc?.name} </h3>
-            <h4> {desc?. description} </h4>
-            <h2> {desc?.price} </h2>
+  return <ItemDetail desc = {desc} />
 
-              <div className="flex_button">
-                <button>+</button>
-                <button>-</button>
-              </div>
-          </div>
-    </div>
-    
-        
-
-  )
 
 };
 
