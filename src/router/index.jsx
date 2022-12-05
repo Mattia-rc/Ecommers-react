@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Category from '../views.jsx/category'
 import Item from '../views.jsx/item'
+import Carrito from '../views.jsx/carrito'
 
 export const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ export const router = createBrowserRouter([
 
   {
     path: "/carrito/",
-    element: <carrito/>
+    element: <Carrito />
 
   }
 ]);

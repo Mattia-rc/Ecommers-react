@@ -22,6 +22,12 @@ const ItemDetail = ({ desc }) => {
       setCarrito(carrito.push(desc)); 
         console.log(carrito);
  }
+
+ function finalizarCompra(){
+  <div>
+      <button>Finalizar Compra</button>
+  </div>
+ }
   return (
    
     <div className="imgLeft">
@@ -41,9 +47,9 @@ const ItemDetail = ({ desc }) => {
                 }>-</button>
               </div>
               <button className="btnCarrito" onClick={()=>
-
+                  
                   addItem()
-              
+                
               }>Agregar al carrito</button>
           </div>
     </div>

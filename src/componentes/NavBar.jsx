@@ -7,12 +7,12 @@ export default function NavBar() {
         
         <ul className='navFlex'>
         <Link to="/">Home</Link>
-        <Link to="/category/keyboard">Keyboard</Link>
-        <Link to="/category/Mouse">Mouses</Link>
-        <Link to="/category/Mousepad">Mousepad</Link>
-        <Link to="/category/Monitor">Monitores</Link>
+        <Link to="/category/keyboard-Mouse">Keyboard y Mouses</Link>
+ 
+       
+        <Link to="/category/Mousepad-Monitor">Monitores y Mousepad</Link>
       
-          <Link to = ""><CartWidget /></Link>
+          <Link to = "/carrito/"><CartWidget /></Link>
         </ul>
     </nav>
   )

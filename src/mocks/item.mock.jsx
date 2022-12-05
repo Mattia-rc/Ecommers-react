@@ -3,7 +3,7 @@ export const item = [
     {
         id: "1",
         name: "Keyboard",
-        category: "keyboard",
+        category: "keyboard-Mouse",
         description: "Teclado logitech 60% OffRide",
         stock: 5,
         price: 1000,
@@ -13,7 +13,7 @@ export const item = [
     {
         id: "3",
         name: "Mouse",
-        category: "Mouse",
+        category: "keyboard-Mouse",
         description: "Mouse Logitech RGB",
         stock: 5,
         price: 1000,
@@ -23,7 +23,7 @@ export const item = [
     {
         id: "4",
         name: "Mousepad",
-        category: "Mousepad",
+        category: "Mousepad-Monitor",
         description: "Mousepad Redragon XXL",
         stock: 5,
         price: 1000,
@@ -33,7 +33,7 @@ export const item = [
     {
         id: "2",
         name: "Monitor",
-        category: "Monitor",
+        category: "Mousepad-Monitor",
         description: "Monitor 244hz Samsung Curvo",
         stock: 2,
         price: 1000,
