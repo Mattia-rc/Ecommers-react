@@ -1,11 +1,11 @@
 
 import { Layout } from "../componentes/Layout";
-import itemCarrito from "../componentes/itemCarrito";
+import ItemCarrito from "../componentes/ItemCarrito";
 const carritoViews = () => {
 
   return (
     <Layout>
-          <itemCarrito />
+          <ItemCarrito />
     </Layout>
   );
 };

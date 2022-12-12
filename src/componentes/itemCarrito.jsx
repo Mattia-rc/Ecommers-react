@@ -1,7 +1,9 @@
 
 const itemCarrito = () =>{
 
-   
+return(
+    <p>hola</p>
+)   
 
 }
 

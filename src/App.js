@@ -1,16 +1,16 @@
 
 import './App.css';
-import NavBar from './componentes/NavBar';
-import ItemListContainer from './componentes/ItemListContainer';
-import ItemDetailContainer from './componentes/itemDetailContainer';
-import VolverAtras from './componentes/VolverAtras';
+
+import Layout from "./componentes/Layout"
+import ItemListContainer from "./componentes/ItemListContainer"
 function App() {
   return (
    <main className='App'>
-    <NavBar/>
-    <VolverAtras/>
-    <ItemListContainer/>
-    <ItemDetailContainer/>
+
+    <Layout>
+        <ItemListContainer />
+    </Layout>
+
    
    </main>
 
