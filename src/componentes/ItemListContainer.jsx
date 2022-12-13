@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { item } from "../mocks/item.mock"
 import { Link } from 'react-router-dom'
+import { CartContext } from "../context/cartContext";
+
 const ItemListContainer = ({ greeting }) => {
+  
   const { category } = useParams();
   const [products, setProducts] = useState([]);
   const [clicks, setClicks] = useState(0)

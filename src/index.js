@@ -5,11 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {router} from './router/index'
 import { RouterProvider } from "react-router-dom";
+import CartProvider from "./context/cartContext"
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
+  <CartProvider>
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
+  </CartProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

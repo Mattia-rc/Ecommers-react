@@ -1,8 +1,15 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
+import { useCartContext } from "../context/cartContext";
 const ItemDetail = ({ desc }) => {
+  const [goToCart, setGoToCart] = useState(false)
   const [clicks, setClicks] = useState(0)
   const [carrito, setCarrito] = useState([])
+  const {addProduct} = useCartContext(); 
+
+
+
+
     function sumarContador(){
       if(clicks<desc?.stock){
         setClicks(clicks+1)
@@ -18,9 +25,12 @@ const ItemDetail = ({ desc }) => {
     }
 
 
-    function addItem(){
-      setCarrito(carrito.push(desc)); 
-        console.log(carrito);
+
+
+ function handleAdd(){
+ 
+  addProduct(desc);
+    
  }
 
  function finalizarCompra(){
@@ -46,11 +56,8 @@ const ItemDetail = ({ desc }) => {
                   restarContador()
                 }>-</button>
               </div>
-              <button className="btnCarrito" onClick={()=>
-                  
-                  addItem()
-                
-              }>Agregar al carrito</button>
+                <button onClick={handleAdd}>Agregar al carrito</button>
+       
           </div>
     </div>
   );

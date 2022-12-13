@@ -1,33 +1,42 @@
-import React,{ createContext, useState } from "react";
-import { item } from "../mocks/item.mock";
-
-export const Context = createContext();
 
 
-export const CartContextProvider = ({children})=>{
-    const [carrito, setCarrito] = useState([])
+import React from "react";
+import { useState, useContext } from "react";
+
+ const CartContext = React.createContext([]);
+
+ export const useCartContext = () => useContext(CartContext); 
+    const CartProvider = ({children}) => {
+
+    const [cart, setCart] = useState([]);
+    const clearCart = () => setCart([]);
+    const isInCart = (id)  => {
+        return cart.find(product => product.id === id) ? true : false;
+    }
+    const removeProduct = (id)  => setCart(cart.filter(product => product.id !== id));
+
     
-    function addItem(item){
-         setCarrito(carrito.push(item));
-    }
-
-    function removeItem(itemID){
-        setCarrito(carrito.filter((item)=>item.id !== itemID));
-    }
+   const addProduct = (item, newQuantity) =>{
+        const newCart = cart.filter(prod => prod.id !== item.id);
+        newCart.push({...item, quantity: newQuantity})
+        setCart(newCart);
+    } 
 
 
-    function clear(){
-        setCarrito([]); 
-    }
+    console.log('carrito: ', cart);
 
-    function isInCart(itemID){
-        return Boolean(carrito.find((item)=>item.id === itemID))
-    }
+
+
     return(
-        <Context.Provider value={{clear, removeItem, addItem, isInCart}}>
-
-        {children}
-
-        </Context.Provider>
+            <CartContext.Provider value={{
+                clearCart,
+                isInCart,
+                removeProduct,
+                addProduct 
+            }}>
+                {children}
+            </CartContext.Provider>
     )
 }
+
+export default CartProvider
