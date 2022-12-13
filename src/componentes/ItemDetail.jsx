@@ -25,13 +25,10 @@ const ItemDetail = ({ desc }) => {
     }
 
 
+    const onAdd = (quantity) => {
+      addProduct(desc, quantity);
+    }
 
-
- function handleAdd(){
- 
-  addProduct(desc);
-    
- }
 
  function finalizarCompra(){
   <div>
@@ -46,7 +43,7 @@ const ItemDetail = ({ desc }) => {
             <h3 className="editText"> {desc?.name} </h3>
             <h4> {desc?. description} </h4>
             <h2 className="precioEdit"> {desc?.price} </h2>
-            <h5> El stock disponible es de: {desc?.stock} </h5>
+        
               <div className="flex_button">
                 <button onClick={()=>
                  sumarContador()
@@ -56,7 +53,7 @@ const ItemDetail = ({ desc }) => {
                   restarContador()
                 }>-</button>
               </div>
-                <button onClick={handleAdd}>Agregar al carrito</button>
+                <button onClick={onAdd}>Agregar al carrito</button>
        
           </div>
     </div>
