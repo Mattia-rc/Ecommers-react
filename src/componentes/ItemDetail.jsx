@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../context/cartContext";
 const ItemDetail = ({ desc }) => {
   const [goToCart, setGoToCart] = useState(false)
-  const [clicks, setClicks] = useState(0)
+  const [clicks, setClicks] = useState(1)
   const [carrito, setCarrito] = useState([])
   const {addProduct} = useCartContext(); 
 
@@ -12,6 +12,8 @@ const ItemDetail = ({ desc }) => {
 
     function sumarContador(){
       if(clicks<desc?.stock){
+        console.log(desc.cantidad)
+        
         setClicks(clicks+1)
       }else{
         console.log("se ha superado el stock");
@@ -20,14 +22,15 @@ const ItemDetail = ({ desc }) => {
 
     function restarContador (){
       if(clicks> 0){
+        desc.cantidad-=clicks
         setClicks(clicks-1);
       }
     }
 
 
-    const onAdd = (quantity) => {
+   /*  const onAdd = (quantity) => {
       addProduct(desc, quantity);
-    }
+    } */
 
 
  function finalizarCompra(){
@@ -53,8 +56,7 @@ const ItemDetail = ({ desc }) => {
                   restarContador()
                 }>-</button>
               </div>
-                <button onClick={onAdd}>Agregar al carrito</button>
-       
+                <button onClick={()=>addProduct(desc,clicks)}>Agregar al carrito</button>
           </div>
     </div>
   );

@@ -11,15 +11,20 @@ import { useState, useContext } from "react";
     const [cart, setCart] = useState([]);
   
 
-   const addProduct = (item, newQuantity) =>{
+   const addProduct = (item,cant) =>{
         const newCart = cart.filter(prod => prod.id !== item.id);
-        newCart.push({...item, quantity: newQuantity})
+        const product =cart.find(e=>e.id===item.id);
+        if(isInCart(item.id)){
+            newCart.push({...product,cantidad:product.cantidad+cant})
+        }else{
+            newCart.push({...item,cantidad:item.cantidad+cant})
+        }
         setCart(newCart);
     } 
 
-
+    
     console.log('carrito: ', cart);
-
+    
     const clearCart = () => setCart([]);
 
 
@@ -45,4 +50,4 @@ import { useState, useContext } from "react";
     )
 }
 
-export default CartProvider
+export default CartProvider;
