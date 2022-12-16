@@ -149,3 +149,17 @@ li{
   border-radius: 10px;
 }
 
+
+.img_editt{
+  border: 1px solid black;
+  padding: 70px 20px;
+  background-color: #fff;
+  margin:0px 800px 0px 800px;
+  border-radius: 20px;
+}
+
+
+.flexColumn{
+  display: flex;
+  
+}
