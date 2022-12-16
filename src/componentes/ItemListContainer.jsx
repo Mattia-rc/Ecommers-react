@@ -3,13 +3,26 @@ import { useParams } from "react-router-dom";
 import { item } from "../mocks/item.mock"
 import { Link } from 'react-router-dom'
 import { CartContext } from "../context/cartContext";
-
+import {doc,getDoc,getFirestore} from "firebase/firestore"
 const ItemListContainer = ({ greeting }) => {
   
   const { category } = useParams();
   const [products, setProducts] = useState([]);
   const [clicks, setClicks] = useState(0)
-  useEffect(() => {
+
+  useEffect(()=>{
+
+    const db = getFirestore()
+    const itemRef = doc(db, "item", "AP3JUadJ5OpbZ8LPZGyZ");
+    getDoc(itemRef).then((snapshot) =>{
+      if(snapshot.exists()){
+        setProducts([{id: "AP3JUadJ5OpbZ8LPZGyZ", ...snapshot.data()}]);
+      }
+    })
+  }, [])
+
+
+ /*  useEffect(() => {
     new Promise((resolve) =>
       setTimeout(() => {
         resolve(item);
@@ -24,7 +37,7 @@ const ItemListContainer = ({ greeting }) => {
         setProducts(data);
       }
     });
-  }, [category]);
+  }, [category]); */
 
   if (products.length === 0) {
     return <p>cargando....  </p>;
