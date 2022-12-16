@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { item } from "../mocks/item.mock"
 import { Link } from 'react-router-dom'
 import { CartContext } from "../context/cartContext";
-import {doc,getDoc,getFirestore} from "firebase/firestore"
+import {collection,doc,getDoc,getDocs,getFirestore} from "firebase/firestore"
 const ItemListContainer = ({ greeting }) => {
   
   const { category } = useParams();
@@ -13,11 +13,16 @@ const ItemListContainer = ({ greeting }) => {
   useEffect(()=>{
 
     const db = getFirestore()
-    const itemRef = doc(db, "item", "AP3JUadJ5OpbZ8LPZGyZ");
+   /*  const itemRef = doc(db, "item", "AP3JUadJ5OpbZ8LPZGyZ");
     getDoc(itemRef).then((snapshot) =>{
       if(snapshot.exists()){
         setProducts([{id: "AP3JUadJ5OpbZ8LPZGyZ", ...snapshot.data()}]);
       }
+    }) */
+    const itemCollection = collection(db, "item");
+    getDocs(itemCollection).then((snapshot)=>{
+      const products = snapshot.docs.map((doc)=>({id: doc.id, ...doc.data()}))
+      setProducts(products)
     })
   }, [])
 
