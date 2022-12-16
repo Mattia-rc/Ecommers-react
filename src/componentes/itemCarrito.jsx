@@ -1,13 +1,13 @@
 
 import { useCartContext } from "../context/cartContext";
-
+import { Link } from "react-router-dom";
 import {FaTrashAlt} from 'react-icons/fa'
 const ItemCarrito = () =>{
     const {cart,clearCart, removeProduct} = useCartContext(); 
 return(
     <div>
         {
-            cart.length===0?<h1>Carrito Vacio</h1>:
+            cart.length===0?<h1>UPSS!!... Todavia no has seleccionado ningun producto. <Link to="/">Ver productos de la tienda</Link></h1>:
             cart.map(product=>(
                 <div className="flexColumn">
 
@@ -23,7 +23,20 @@ return(
                     </div>
                 </div>
             ))
+                
+            
         }
+        <div>
+            <button onClick={()=>clearCart()}>
+                Borrar productos del Carrito
+            </button>
+
+            <button>
+                <Link to="">Finalizar compra</Link>
+            </button>
+
+        </div>
+
     </div>
 )   
 
