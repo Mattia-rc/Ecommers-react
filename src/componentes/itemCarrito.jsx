@@ -32,7 +32,7 @@ return(
             </button>
 
             <button>
-                <Link to="">Finalizar compra</Link>
+                <Link to="/FinalizarCompra/">Finalizar compra</Link>
             </button>
 
         </div>

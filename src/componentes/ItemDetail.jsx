@@ -6,7 +6,7 @@ const ItemDetail = ({ desc }) => {
   const [clicks, setClicks] = useState(1)
   const [carrito, setCarrito] = useState([])
   const {addProduct} = useCartContext(); 
-
+  
 
 
 

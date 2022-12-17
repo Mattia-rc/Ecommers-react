@@ -9,7 +9,8 @@ import { useState, useContext } from "react";
     const CartProvider = ({children}) => {
 
     const [cart, setCart] = useState([]);
-  
+    
+     
 
    const addProduct = (item,cant) =>{
         const newCart = cart.filter(prod => prod.id !== item.id);
