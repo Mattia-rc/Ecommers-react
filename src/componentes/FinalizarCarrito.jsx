@@ -9,7 +9,7 @@ const FinalizarCarrito = () => {
 
     const db = getFirestore();
     const [comprador, setComprador]= useState({})
-    const [compradorTel, setCompradorTel] = useState({})
+
   
     const datosComprador = (e)=> {
         setComprador({
@@ -17,20 +17,14 @@ const FinalizarCarrito = () => {
            [e.target.name]:e.target.value
         })
     }
-    const datosCompradorTel = (m)=> {
-        setCompradorTel({
-            ...compradorTel,
-           [m.target.tel]:m.target.value
-        })
-    }
+
 
 
     const FinalizarCompra = () =>{
         const ventasCollection = collection(db, "ventas")
         addDoc(ventasCollection, {
-
-            item: cart,
             comprador: comprador,
+            item: cart,
             date: serverTimestamp()
 
         } )
@@ -41,8 +35,7 @@ const FinalizarCarrito = () => {
         <div>
             <div>
             <input className="form-control" type="text" placeholder='Nombre y Apellido' name="name" onChange={datosComprador}/>
-            <input className="form-control" type="text" placeholder='ingrese su telefono' name="tel" onChange={datosCompradorTel}/>
-            
+
             </div>
 
             <div>
