@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { item } from "../mocks/item.mock"
 import { Link } from 'react-router-dom'
 import { CartContext } from "../context/cartContext";
+import ItemList from "./ItemList"
 import {collection,doc,getDoc,getDocs,getFirestore, query,
   where} from "firebase/firestore"
 const ItemListContainer = ({ greeting }) => {
@@ -43,23 +44,8 @@ const ItemListContainer = ({ greeting }) => {
 
 
   return (
-    <div>
-      {<h2 className="texth2">{greeting}</h2>}
 
-      <div className="flex_productos">{products.map((product) =>
-
-        <div className="img_edit"><img src={product.img} />
-          <hr />
-          <h3 className="productName">{product.name}</h3>
-
-          <h4 className="productName">{product.description}</h4>
-
-
-          <Link className="editTextLink" to={`/item/${product.id}`}>Ver detalle de producto</Link>
-          
-        </div>
-      )}</div>
-    </div>
+      <ItemList products = {products} />
 
   )
 }

@@ -31,9 +31,7 @@ return(
                 Borrar productos del Carrito
             </button>
 
-            <button>
-                <Link to="/FinalizarCompra/">Finalizar compra</Link>
-            </button>
+            <Link to="/finalizar/">Continuar con la Compra</Link>
 
         </div>
 

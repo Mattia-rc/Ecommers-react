@@ -4,7 +4,7 @@ import App from "../App";
 import Category from '../views.jsx/category'
 import Item from '../views.jsx/item'
 import Carrito from '../views.jsx/carrito'
-import FinalizarCompraView from "../views.jsx/FinalizarCompra";
+import Finalizar from '../views.jsx/Finalizar'
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -24,8 +24,10 @@ export const router = createBrowserRouter([
     element: <Carrito />
 
   },
+
   {
-    path: "/FinalizarCompra/",
-    element: <FinalizarCompraView />
+    path: "/finalizar/",
+    element: <Finalizar />
   }
+
 ]);
