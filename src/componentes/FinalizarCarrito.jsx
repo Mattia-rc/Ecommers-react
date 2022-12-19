@@ -4,7 +4,7 @@ import { useState } from "react";
 import {collection, addDoc, serverTimestamp, doc, updateDoc,getFirestore} from "firebase/firestore"
 const FinalizarCarrito = () => {
     const {cart} = useCartContext()
-    console.log(cart);
+    
    
 
     const db = getFirestore();
@@ -24,6 +24,8 @@ const FinalizarCarrito = () => {
         const ventasCollection = collection(db, "ventas")
         addDoc(ventasCollection, {
             comprador: comprador,
+            email: comprador,
+            telefono: comprador,
             item: cart,
             date: serverTimestamp()
 
@@ -31,15 +33,17 @@ const FinalizarCarrito = () => {
     }
 
     return(
-           
-        <div>
-            <div>
+            
+        <div >
+            <h1>Ecommerse-Bgn</h1>
+            <div className="displayInput">
             <input className="form-control" type="text" placeholder='Nombre y Apellido' name="name" onChange={datosComprador}/>
-
+            <input className="form-control" type="text" placeholder="Ingrese su Email" name="name" onChange={datosComprador} />
+            <input className="form-control" type="number" placeholder="Ingrese su Email" name="name" onChange={datosComprador} />
             </div>
 
             <div>
-                su item seleccionado es: {cart.map(product=>(
+              <h3>Su item seleccionado es:</h3> {cart.map(product=>(
 
                   <h4> {product.name}, cantidad: {product.cantidad} </h4>
                 
@@ -49,7 +53,7 @@ const FinalizarCarrito = () => {
 
 
                     <div>
-                        <button onClick={FinalizarCompra}>
+                        <button className="inputFinalizar"  onClick={FinalizarCompra}>
                             Finalizar Compra
                         </button>
                     </div>
