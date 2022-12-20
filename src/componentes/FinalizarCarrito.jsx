@@ -34,26 +34,35 @@ const FinalizarCarrito = () => {
 
     return(
             
-        <div >
-            <h1>Ecommerse-Bgn</h1>
+        <div className="display-flex-completo">
+            <div>
+            <h1>Formulario de compra</h1>
             <div className="displayInput">
             <input className="form-control" type="text" placeholder='Nombre y Apellido' name="name" onChange={datosComprador}/>
             <input className="form-control" type="text" placeholder="Ingrese su Email" name="name" onChange={datosComprador} />
             <input className="form-control" type="number" placeholder="Ingrese su Email" name="name" onChange={datosComprador} />
             </div>
 
+            </div>
             <div>
-              <h3>Su item seleccionado es:</h3> {cart.map(product=>(
-                  <h4> {product.name}, cantidad: {product.cantidad} </h4>
+
+                    <h2>Detalle de su compra:</h2>
+
+
+              <h4>Su producto seleccionado es:</h4> {cart.map(product=>(
+               /*    <h4> {product.name}, cantidad: {product.cantidad} </h4> */
+              
+                   <h3>{product.description}, cantidad: {product.cantidad}</h3>
+               
                 ))} 
-            </div>
+            
 
-            <div>
-                <h4>Total:</h4>
-            </div>
+           
+             
+           
 
 
-                    <div>
+                   
                         <button className="inputFinalizar"  onClick={FinalizarCompra}>
                             Finalizar Compra
                         </button>

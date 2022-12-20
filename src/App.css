@@ -235,3 +235,9 @@ li{
 .flex_column{
   display: flex;
 }
+
+.display-flex-completo{
+  display: flex;
+  justify-content: space-around
+}
+

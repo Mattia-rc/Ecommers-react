@@ -18,7 +18,7 @@ return(
                     
                        
 
-                    <img  src={product.img} />
+                    <img className="img_edit"  src={product.img} />
                     <h1>{product.name}</h1>
                     <h3>{product.description}</h3>
                     <h4> {product.cantidad} </h4>
