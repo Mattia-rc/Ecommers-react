@@ -108,3 +108,31 @@ Una vez clonado o descargado el proyecto, instalar dependencias:
 
 Recordar que tiene un backend realizado con Firebase, por si quieren descargar y correr este proyecto, tienen que generar su backend en firebase sino local con data fake. En el archivo .env.example estan las variables que deben ir para poder llenarlas con sus datos de Firebase.
 
+
+# Estructura
+ ![image](estructura.png)
+
+
+ # Home 
+
+ ![image](home.png)
+
+ # Detail 
+  ![image](detail.png)
+
+
+  # Carrito
+
+ ![image](carrito.png)
+
+
+# Firebase
+
+ ![image](firebae.png)
+
+
+ # Navegacion
+
+ ### Haz click 
+
+ Hacé click [ACA](https://www.youtube.com/watch?v=GSKI3Yo4dNA) para ver un video de demostración del proceso de compra de la app.
