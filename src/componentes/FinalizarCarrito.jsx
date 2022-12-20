@@ -2,6 +2,7 @@
 import { useCartContext } from "../context/cartContext";
 import { useState } from "react";
 import {collection, addDoc, serverTimestamp, doc, updateDoc,getFirestore} from "firebase/firestore"
+import Swal from "sweetalert2"
 const FinalizarCarrito = () => {
     const {cart} = useCartContext()
     
@@ -16,9 +17,17 @@ const FinalizarCarrito = () => {
             ...comprador,
            [e.target.name]:e.target.value
         })
+
+      
     }
 
-
+    const mostrarAlerta = () => {
+        Swal.fire(
+            'Compra realizada',
+            'Muchisimas gracias por confiar en nosotros!!',
+            'success'
+          )
+    }
 
     const FinalizarCompra = () =>{
         const ventasCollection = collection(db, "ventas")
@@ -30,6 +39,8 @@ const FinalizarCarrito = () => {
             date: serverTimestamp()
 
         } )
+        mostrarAlerta();
+
     }
 
     return(
@@ -50,7 +61,7 @@ const FinalizarCarrito = () => {
 
 
               <h4>Su producto seleccionado es:</h4> {cart.map(product=>(
-               /*    <h4> {product.name}, cantidad: {product.cantidad} </h4> */
+           
               
                    <h3>{product.description}, cantidad: {product.cantidad}</h3>
                
@@ -63,7 +74,7 @@ const FinalizarCarrito = () => {
 
 
                    
-                        <button className="inputFinalizar"  onClick={FinalizarCompra}>
+                        <button className="inputFinalizar" onClick={FinalizarCompra}>
                             Finalizar Compra
                         </button>
                     </div>
