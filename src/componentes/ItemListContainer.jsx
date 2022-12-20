@@ -6,6 +6,7 @@ import { CartContext } from "../context/cartContext";
 import ItemList from "./ItemList"
 import {collection,doc,getDoc,getDocs,getFirestore, query,
   where} from "firebase/firestore"
+  import { Loading } from "../componentes/Loading";
 const ItemListContainer = ({ greeting }) => {
   
   const { category } = useParams();
@@ -38,7 +39,7 @@ const ItemListContainer = ({ greeting }) => {
 
 
   if (products.length === 0) {
-    return <p>cargando....  </p>;
+    return <Loading />;
   }
 
 

@@ -44,11 +44,12 @@ const FinalizarCarrito = () => {
 
             <div>
               <h3>Su item seleccionado es:</h3> {cart.map(product=>(
-
                   <h4> {product.name}, cantidad: {product.cantidad} </h4>
-                
-
                 ))} 
+            </div>
+
+            <div>
+                <h4>Total:</h4>
             </div>
 
 

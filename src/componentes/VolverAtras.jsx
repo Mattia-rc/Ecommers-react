@@ -6,7 +6,7 @@ export default function VolverAtras(){
     return(
 
         <div className="classFlecha">
-                <Link to="/">⬅</Link>
+                <Link className="colorFlecha" to="/">⬅</Link>
         </div>
 
     )

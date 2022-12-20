@@ -31,7 +31,7 @@ return(
           </div>
         <div>
             <button onClick={()=>clearCart()}>
-                Borrar productos del Carrito
+                 Borrar productos del Carrito
             </button>
 
             <Link to="/finalizar/" className="compraText">Continuar con la compra</Link>
