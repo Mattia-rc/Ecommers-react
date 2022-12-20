@@ -154,18 +154,18 @@ li{
   border: 1px solid black;
   padding: 100px;
   background-color: #fff;
-  margin:0px 800px 0px 800px;
+  margin: 81px;
   border-radius: 20px;
 }
 
 .img_editt img{
-  width: 300px;
+  width: 200px;
 }
 
 
 .flexColumn{
  display: flex;
- flex-direction: column;
+justify-content: space-around;
 }
 /*
 .InputDiv{
@@ -232,9 +232,7 @@ li{
   color: red;
 }
 
-.flex_column{
-  display: flex;
-}
+
 
 .display-flex-completo{
   display: flex;

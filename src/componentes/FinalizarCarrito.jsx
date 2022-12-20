@@ -40,7 +40,7 @@ const FinalizarCarrito = () => {
             <div className="displayInput">
             <input className="form-control" type="text" placeholder='Nombre y Apellido' name="name" onChange={datosComprador}/>
             <input className="form-control" type="text" placeholder="Ingrese su Email" name="name" onChange={datosComprador} />
-            <input className="form-control" type="number" placeholder="Ingrese su Email" name="name" onChange={datosComprador} />
+            <input className="form-control" type="tel" placeholder="Ingrese su telefono" name="name" onChange={datosComprador} />
             </div>
 
             </div>

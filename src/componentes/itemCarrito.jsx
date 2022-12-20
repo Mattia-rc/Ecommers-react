@@ -12,13 +12,13 @@ return(
            
             cart.map(product=>(
                
-
+                        
                         <div className="img_editt">
                         <FaTrashAlt className="iconEdit" onClick={()=>removeProduct(product.id)}/>
                     
                        
 
-                    <img className="img_edit"  src={product.img} />
+                    <img src={product.img} />
                     <h1>{product.name}</h1>
                     <h3>{product.description}</h3>
                     <h4> {product.cantidad} </h4>
